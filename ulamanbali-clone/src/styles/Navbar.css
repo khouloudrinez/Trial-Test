@@ -1,9 +1,3 @@
-@font-face {
-  font-family: 'BasisGrotesquePro';
-  src: url('/fonts/BasisGrotesquePro-Regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
 
 .navbar {
   display: flex;
@@ -53,21 +47,22 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 20px;
+  top: 10px;
   width: 100%;
-  max-width: 600px;
+  max-width: 130px;
   text-align: center;
   z-index: 20;
 }
 
 .logo {
   height: auto;
-  max-height: 100px;
+  max-height: 70px; 
   width: 100%;
-  max-width: 300px;
+  max-width: 140px; 
   display: inline-block;
   object-fit: contain;
 }
+
 
 /* Right Side (book btn + menu icon) */
 .rightSection {
@@ -148,6 +143,49 @@
 .navbar.navDetail .menuButton.open .lineBottom {
   background-color: rgb(195, 154, 77);
 }
+
+
+/* Scrolled Navbar */
+.navbar.navScrolled {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #efebe2;
+  z-index: 999;
+}
+
+/* Update text and menu icon colors */
+.navbar.navScrolled .navLinks li a {
+  color: #b88430;
+}
+
+.navbar.navScrolled .navLinks li a:hover {
+  border-bottom: 1px solid #b88430;
+  opacity: 0.85;
+}
+
+/* Menu lines */
+.navbar.navScrolled .lineTop,
+.navbar.navScrolled .lineBottom,
+.navbar.navScrolled .menuButton.open .lineTop,
+.navbar.navScrolled .menuButton.open .lineBottom {
+  background-color: #b88430;
+}
+
+/* Book button */
+.navbar.navScrolled .bookButton {
+  border-color: #b88430;
+  color: #b88430;
+}
+
+.navbar.navScrolled .bookButton:hover {
+  background-color: #b88430;
+  color: white;
+}
+
+
+
+
 
 /* Book Button */
 .bookButton {

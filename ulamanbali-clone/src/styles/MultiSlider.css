@@ -1,0 +1,72 @@
+.multi-slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  padding: 9rem 0 9rem 9rem;
+  background-color: #efebe2;
+}
+
+.arrow-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.big-arrow {
+  background-color: transparent;
+  border: 2px solid #b88430;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+.arrow-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-icon.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.arrow-svg {
+  width: 36px;
+  height: 36px;
+  stroke: #b88430 ;
+  stroke-width: 1.5;
+}
+
+
+
+.multi-slider-container {
+  display: flex;
+  overflow-x: auto;
+  
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+
+  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+}
+
+.multi-slider-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.multi-slider-item {
+  flex: 0 0 calc(100% / 2.5);
+  scroll-snap-align: start;
+}

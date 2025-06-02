@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import '../styles/Navbar.css'
 
-export default function Navbar() {
+export default function Navbar({ scrolled }) {
   const router = useRouter();
   const pathname = usePathname();
 
@@ -26,7 +26,7 @@ export default function Navbar() {
 
   };
 
-  const navColorClass = pathname === '/detail' ? 'navDetail' : 'navHome';
+  const navColorClass = pathname === '/detail' ? 'navDetail' : scrolled ? 'navScrolled' : 'navHome';
 
   return (
     <nav className={`navbar ${navColorClass}`}>

@@ -9,6 +9,9 @@ export default function DetailPage() {
   const [selectedKey, setSelectedKey] = useState('');
 
   const imageMap = {
+
+    Home:'/images/Zjeq0EMTzAJOCirD_hotel.avif',
+    Villas:'/images/Zj16TkMTzAJOCrGY_eco-luxury-resort-indonesia.avif',
     packages: '/images/ZjejSkMTzAJOCioK_bali-hotels.avif',
     spa: '/images/ZpISqB5LeNNTxIRB_weddings-in-bali.avif',
     retreats: '/images/ZoafWB5LeNNTwyz5_yoga-shala.avif',
