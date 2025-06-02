@@ -1,0 +1,16 @@
+.transition-page {
+    background-color: #efebe2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+    color: #997c42;
+    font-size: 3rem;
+    animation: fadeIn 0.8s ease-out;
+  }
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.92); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  

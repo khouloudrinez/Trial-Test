@@ -1,6 +1,7 @@
 'use client'
 import { Geist, Geist_Mono } from "next/font/google";
 
+import Navbar from '../components/Navbar';  
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,14 +14,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Navbar />     {/* Add Navbar here */}
         {children}
-      </body>
+      </body> 
     </html>
   );
 }

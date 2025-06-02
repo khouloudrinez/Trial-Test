@@ -1,40 +1,61 @@
 'use client';
-import { useState } from 'react';
-import styles from '../styles/navbar.module.css';
+import { useState, useEffect } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
+import '../styles/Navbar.css'
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
-  const toggleMenu = () => setMenuOpen(!menuOpen);
+  // menuOpen is true if on /detail, false if on /
+  const [menuOpen, setMenuOpen] = useState(pathname === '/detail');
+
+  // When pathname changes, update menuOpen accordingly
+  useEffect(() => {
+    setMenuOpen(pathname === '/detail');
+  }, [pathname]);
+
+  const toggleMenu = () => {
+    if (menuOpen) {
+     
+      router.push('/');
+    } else {
+      
+      router.push('/detail');
+    }
+
+  };
+
+  const navColorClass = pathname === '/detail' ? 'navDetail' : 'navHome';
 
   return (
-    <nav className={styles.navbar}>
+    <nav className={`navbar ${navColorClass}`}>
       <button
-        className={`${styles.menuButton} ${menuOpen ? styles.open : ''}`}
+        className={`menuButton ${menuOpen ? 'open' : ''}`}
         onClick={toggleMenu}
         aria-label="Toggle menu"
       >
-        <div className={styles.lineTop}></div>
-        <div className={styles.lineBottom}></div>
+        <div className="lineTop"></div>
+        <div className="lineBottom"></div>
       </button>
 
-      <ul className={styles.navLinks}>
+      <ul className={`navLinks ${navColorClass}`}>
         <li><a href="#">Villas</a></li>
         <li><a href="#">Spa</a></li>
         <li><a href="#">Dine</a></li>
         <li><a href="#">Retreats</a></li>
       </ul>
 
-      <div className={styles.logoWrapper}>
+      <div className="logoWrapper">
         <img
           src="https://ulaman.cdn.prismic.io/ulaman/aAMlsuvxEdbNPPas_logo-new.svg"
           alt="Ulaman Logo"
-          className={styles.logo}
+          className="logo"
         />
       </div>
 
-      <div className={styles.rightSection}>
-        <button className={styles.bookButton}>Stay With Us</button>
+      <div className="rightSection">
+        <button className="bookButton">Stay With Us</button>
       </div>
     </nav>
   );

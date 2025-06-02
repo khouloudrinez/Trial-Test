@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'BasisGrotesquePro';
+  src: url('/fonts/BasisGrotesquePro-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  font-weight: 600;
+  gap: 20px;
+  font-family: 'BasisGrotesquePro', sans-serif;
+}
+
+/* NavLinks shared */
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+  font-family: 'BasisGrotesquePro', sans-serif;
+}
+
+/* Home Page Colors */
+.navbar.navHome .navLinks li a {
+  color: #F4EFE8;
+}
+
+.navbar.navHome .navLinks li a:hover {
+  border-bottom: 1px solid #F4EFE8;
+  opacity: 0.85;
+}
+
+/* Detail Page Colors */
+.navbar.navDetail .navLinks li a {
+  color: rgb(195, 154, 77);
+}
+
+.navbar.navDetail .navLinks li a:hover {
+  border-bottom: 1px solid rgb(195, 154, 77);
+  opacity: 0.85;
+}
+
+/* Center Logo */
+.logoWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  z-index: 20;
+}
+
+.logo {
+  height: auto;
+  max-height: 100px;
+  width: 100%;
+  max-width: 300px;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Right Side (book btn + menu icon) */
+.rightSection {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hamburger Menu Button */
+.menuButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 20px;
+  width: 35px;
+  margin-right: 20px;
+  position: relative;
+  z-index: 50;
+  margin-left: 10px;
+}
+
+/* Hamburger Lines */
+.lineTop,
+.lineBottom {
+  height: 1px;
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Sizes */
+.lineTop {
+  width: 18px;
+  margin-bottom: 4px;
+}
+.lineBottom {
+  width: 26px;
+}
+
+/* Hover: grow lines */
+.menuButton:hover .lineTop,
+.menuButton:hover .lineBottom {
+  width: 28px;
+}
+
+/* Open State (X) */
+.menuButton.open .lineTop {
+  transform: rotate(45deg);
+  width: 28px;
+  position: relative;
+  top: 5px;
+}
+.menuButton.open .lineBottom {
+  transform: rotate(-45deg);
+  width: 28px;
+  position: relative;
+  top: -5px;
+}
+
+/* === PAGE-SPECIFIC COLORS FOR MENU LINES === */
+
+/* Home (white lines) */
+.navbar.navHome .lineTop,
+.navbar.navHome .lineBottom,
+.navbar.navHome .menuButton.open .lineTop,
+.navbar.navHome .menuButton.open .lineBottom {
+  background-color: white;
+}
+
+/* Detail (gold lines) */
+.navbar.navDetail .lineTop,
+.navbar.navDetail .lineBottom,
+.navbar.navDetail .menuButton.open .lineTop,
+.navbar.navDetail .menuButton.open .lineBottom {
+  background-color: rgb(195, 154, 77);
+}
+
+/* Book Button */
+.bookButton {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s ease;
+  font-family: 'BasisGrotesquePro', sans-serif;
+}
+
+.bookButton:hover {
+  background-color: rgb(195, 154, 77);
+  color: white;
+}
