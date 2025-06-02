@@ -1,0 +1,132 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start; /* left align items */
+  align-items: center;
+  padding: 20px 40px;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  color: white;
+  font-weight: 600;
+  gap: 20px; /* spacing between items */
+}
+
+
+/* Left */
+.navLinks {
+  list-style: none; /* removes bullets */
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s ease;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent; /* hidden line */
+}
+
+.navLinks li a:hover {
+  border-bottom: 1px solid white; /* thin underline appears */
+  opacity: 0.85;
+}
+
+/* Center */
+
+
+.logoWrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px; /* Add some space from the top if needed */
+  width: 100%; /* Ensure it can stretch horizontally if needed */
+  max-width: 600px; /* Limit max width to control size */
+  text-align: center; /* Center contents inside */
+  z-index: 20; /* Make sure it’s above other elements */
+}
+
+.logo {
+  height: auto; /* Let height adjust automatically */
+  max-height: 100px; /* Bigger max height */
+  width: 100%; /* Let the logo take full width of wrapper */
+  max-width: 300px; /* Maximum width */
+  display: inline-block;
+  object-fit: contain; /* Ensure image aspect ratio is kept */
+}
+
+
+.rightSection {
+  margin-left: auto; /* push Stay With Us to right */
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.menuButton {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  width: 35px;
+  margin-right: 20px; /* spacing from nav links */
+ position: relative;
+  z-index: 50; /* Make sure it's above all */
+  margin-left: 10px;
+}
+
+/* Top line shorter */
+.lineTop,
+.lineBottom {
+  height: 1.5px; /* thinner line */
+  background-color: white;
+  width: 28px; /* longer by default */
+  transition: width 0.3s ease, transform 0.3s ease, top 0.3s ease;
+  transform-origin: left center;
+  border-radius: 1px;
+}
+
+/* On hover: both lines become same longer length */
+.menuButton:hover .lineTop,
+.menuButton:hover .lineBottom {
+  width: 32px;
+}
+
+/* When open, transform lines into an X */
+/* Top line rotates 45deg and becomes full width */
+.menuButton.open .lineTop {
+  transform: rotate(45deg);
+  width: 32px;
+  position: relative;
+  top: 5px;
+}
+
+/* Bottom line rotates -45deg and moves up to cross */
+.menuButton.open .lineBottom {
+  transform: rotate(-45deg);
+  width: 32px;
+  position: relative;
+  top: -5px;
+}
+
+
+/* Stay With Us Button */
+.bookButton {
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  transition: 0.3s ease;
+}
+
+.bookButton:hover {
+  background-color: white ;
+  color: black;
+}
