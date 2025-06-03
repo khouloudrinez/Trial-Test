@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // adjust threshold if needed
+      setScrolled(window.scrollY > 50); 
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -46,12 +46,12 @@ export default function Home() {
 
       <section className="custom-section">
         <div className="custom-container">
-          {/* Left: Slider */}
+          
           <div className="slider-container">
           <ImageSlider images={images} />
           </div>
 
-          {/* Right: Text */}
+        
           <div className="text-content">
             <h5 className="heading">
               <div>An award-winning eco-luxury resort offering</div>

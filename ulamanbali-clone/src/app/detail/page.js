@@ -8,6 +8,7 @@ export default function DetailPage() {
   const [hoveredImage, setHoveredImage] = useState('');
   const [selectedKey, setSelectedKey] = useState('');
 
+  
   const imageMap = {
 
     Home:'/images/Zjeq0EMTzAJOCirD_hotel.avif',
@@ -20,16 +21,19 @@ export default function DetailPage() {
     facilities: '/images/ZmEcAJm069VX1f0e_ulaman-eco-retreat.avif',
     blog: '/images/ZiO2APPdc1huKpxk_eco-resort-bali.avif',
     reviews: '/images/ZiPirfPdc1huKp1l_bali-eco-retreat.avif',
-    about: '/images/Zjeq0EMTzAJOCirD_hotel.jpg',
+    about: '/images/Zjeq0EMTzAJOCirD_hotel.avif',
   };
 
   const handleClick = (key) => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('backgroundImage', imageMap[key]);
+      localStorage.setItem('selectedSection', key.charAt(0).toUpperCase() + key.slice(1)); 
     }
+  
     setSelectedKey(key);
     router.push(`/transition?label=${key}`);
   };
+  
 
   const handleHover = (key) => {
     setHoveredImage(imageMap[key]);
@@ -73,10 +77,16 @@ export default function DetailPage() {
   };
   
 
+  const socialLinks = [
+    { name: 'Tripadvisor', url: 'https://www.tripadvisor.com/Hotel_Review-g608496-d21058098-Reviews-Ulaman_Eco_Luxury_Resort-Tabanan_Bali.html' },
+    { name: 'Instagram', url: 'https://www.instagram.com/ulamanbali/#' },
+    { name: 'Facebook', url: 'https://www.facebook.com/UlamanBali/' },
+  ];
+
   return (
     <div className="detail-wrapper">
       <div className="side-menu left-menu">{renderItems(itemsLeft)}</div>
-
+  
       <div className="detail-container">
         <img
           src={hoveredImage || '/images/Zjeq0EMTzAJOCirD_hotel.avif'}
@@ -85,8 +95,27 @@ export default function DetailPage() {
           loading="lazy"
         />
       </div>
-
+  
       <div className="side-menu right-menu">{renderItems(itemsRight)}</div>
+  
+    
+      <div className="social-links">
+  {socialLinks.map(({ name, url }, index) => (
+    <span key={name}>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="social-link"
+      >
+        {name}
+      </a>
+      {index < socialLinks.length - 1 && <span className="separator"> / </span>}
+    </span>
+  ))}
+</div>
+
+
     </div>
   );
-}
+}  

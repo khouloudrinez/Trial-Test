@@ -9,6 +9,7 @@
   font-family: 'Georgia', serif;
   color: #b88430;
   text-align: center;
+  position: relative; 
 }
 
 .side-menu {
@@ -71,4 +72,27 @@
 
 .detail-image:hover {
   transform: scale(1.02);
+}
+
+.social-links {
+  position: absolute;
+  top:40rem;
+  left: 10rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #b88430;
+  user-select: none;
+  text-align: left;
+}
+
+
+.social-links a {
+  color: #b88430;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e3d2a8;
+  text-decoration: underline;
 }

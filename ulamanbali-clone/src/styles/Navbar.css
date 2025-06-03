@@ -12,7 +12,7 @@
   font-family: 'BasisGrotesquePro', sans-serif;
 }
 
-/* NavLinks shared */
+
 .navLinks {
   list-style: none;
   display: flex;
@@ -22,7 +22,7 @@
   font-family: 'BasisGrotesquePro', sans-serif;
 }
 
-/* Home Page Colors */
+
 .navbar.navHome .navLinks li a {
   color: #F4EFE8;
 }
@@ -32,7 +32,7 @@
   opacity: 0.85;
 }
 
-/* Detail Page Colors */
+
 .navbar.navDetail .navLinks li a {
   color: rgb(195, 154, 77);
 }
@@ -42,7 +42,7 @@
   opacity: 0.85;
 }
 
-/* Center Logo */
+
 .logoWrapper {
   position: absolute;
   left: 50%;
@@ -64,7 +64,6 @@
 }
 
 
-/* Right Side (book btn + menu icon) */
 .rightSection {
   margin-left: auto;
   display: flex;
@@ -72,7 +71,7 @@
   gap: 20px;
 }
 
-/* Hamburger Menu Button */
+
 .menuButton {
   background: transparent;
   border: none;
@@ -89,7 +88,6 @@
   margin-left: 10px;
 }
 
-/* Hamburger Lines */
 .lineTop,
 .lineBottom {
   height: 1px;
@@ -97,7 +95,6 @@
   transition: all 0.3s ease;
 }
 
-/* Sizes */
 .lineTop {
   width: 18px;
   margin-bottom: 4px;
@@ -106,13 +103,13 @@
   width: 26px;
 }
 
-/* Hover: grow lines */
+
 .menuButton:hover .lineTop,
 .menuButton:hover .lineBottom {
   width: 28px;
 }
 
-/* Open State (X) */
+
 .menuButton.open .lineTop {
   transform: rotate(45deg);
   width: 28px;
@@ -126,9 +123,7 @@
   top: -5px;
 }
 
-/* === PAGE-SPECIFIC COLORS FOR MENU LINES === */
 
-/* Home (white lines) */
 .navbar.navHome .lineTop,
 .navbar.navHome .lineBottom,
 .navbar.navHome .menuButton.open .lineTop,
@@ -145,7 +140,7 @@
 }
 
 
-/* Scrolled Navbar */
+
 .navbar.navScrolled {
   position: fixed;
   top: 0;
@@ -154,7 +149,7 @@
   z-index: 999;
 }
 
-/* Update text and menu icon colors */
+
 .navbar.navScrolled .navLinks li a {
   color: #b88430;
 }
@@ -164,7 +159,7 @@
   opacity: 0.85;
 }
 
-/* Menu lines */
+
 .navbar.navScrolled .lineTop,
 .navbar.navScrolled .lineBottom,
 .navbar.navScrolled .menuButton.open .lineTop,
@@ -172,7 +167,7 @@
   background-color: #b88430;
 }
 
-/* Book button */
+
 .navbar.navScrolled .bookButton {
   border-color: #b88430;
   color: #b88430;
@@ -184,10 +179,24 @@
 }
 
 
+.navbar.navDetail .bookButton {
+  border-color: #b88430;
+  color: #b88430;
+}
+
+.navbar.navDetail .bookButton:hover {
+  background-color: #b88430;
+  color: white;
+}
+
+.navLinks a.active-link {
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}
 
 
 
-/* Book Button */
+
 .bookButton {
   padding: 12px 24px;
   border-radius: 30px;

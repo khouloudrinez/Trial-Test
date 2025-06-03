@@ -57,13 +57,13 @@
   scroll-behavior: smooth;
   padding-bottom: 1rem;
 
-  /* Hide scrollbar for WebKit browsers (Chrome, Safari) */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+
+  scrollbar-width: none; 
+  -ms-overflow-style: none;  
 }
 
 .multi-slider-container::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
+  display: none; 
 }
 
 .multi-slider-item {
